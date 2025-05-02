@@ -14,6 +14,8 @@ URL:            https://crates.io/crates/vsimd
 Source:         %{crates_source}
 # Automatically generated patch to strip dependencies and normalize metadata
 Patch:          vsimd-fix-metadata-auto.diff
+# Manually created patch for downstream crate metadata changes
+Patch:          vsimd-fix-metadata.diff
 
 BuildRequires:  cargo-rpm-macros >= 24
 
