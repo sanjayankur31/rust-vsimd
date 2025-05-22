@@ -1,0 +1,22 @@
+[package]
+cargo-toml-patch-comments = [
+  """\
+  Update const-str to 0.6. This is just a dev-depencency. We have not \
+  suggested updating upstream because this would increase the MSRV from \
+  1.63 to 1.77, and we suspect that (especially considering both libraries \
+  are by the same author) upstream is trying to avoid this.\
+  """,
+]
+license-files.include = [
+  "LICENSE",
+]
+[[package.extra-sources]]
+number = 10
+file = "https://github.com/Nugine/simd/raw/refs/tags/v%{version}/LICENSE"
+comments = [
+  "https://github.com/Nugine/simd/commit/c6540229a0f02c14eedfa4ed8694815cd6410ba7"
+]
+[scripts]
+prep.post = [
+  "cp -p '%{SOURCE10}' ."
+]
